@@ -1,0 +1,91 @@
+<mat-card class="user">
+    <form>
+        <div>
+            <mat-form-field appearance="outline" class="input-36 input-margin-right-1">
+                <mat-label>Usuário</mat-label>
+                <input matInput placeholder="Ex: teste123" [(ngModel)]="usuario.usuario" name="usuario"
+                autocomplete="off">
+            </mat-form-field>
+            <button mat-button color="primary" title="Alterar senha" 
+                (click)="openModal('updateKeypass')">Alterar senha</button>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="input-82 input-margin-right-1">
+                <mat-label>Nome completo</mat-label>
+                <input matInput placeholder="Ex: Wilson Alegre" [(ngModel)]="usuario.nome" name="nome" 
+                autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-17">
+                <mat-label>CPF</mat-label>
+                <input matInput placeholder="Ex: 123.123.123-12" [(ngModel)]="usuario.cpf" name="cpf"
+                autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="input-17 input-margin-right-1">
+                <mat-label>CEP</mat-label>
+                <input matInput placeholder="Ex: 12.123-123" [(ngModel)]="usuario.cep" name="cep" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-71 input-margin-right-1">
+                <mat-label>Logradouro</mat-label>
+                <input matInput placeholder="Ex: Rua Abc" [(ngModel)]="usuario.logradouro" name="logradouro"
+                autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-10">
+                <mat-label>Número</mat-label>
+                <input matInput placeholder="Ex: 123" [(ngModel)]="usuario.numero" name="numero" autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="input-28 input-margin-right-1">
+                <mat-label>Complemento</mat-label>
+                <input matInput placeholder="Ex: Ap 2" [(ngModel)]="usuario.complemento" name="numero"
+                autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-22 input-margin-right-1">
+                <mat-label>Bairro</mat-label>
+                <input matInput placeholder="Ex: Jd. Abc" [(ngModel)]="usuario.bairro" name="bairro" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-22 input-margin-right-1">
+                <mat-label>Estado</mat-label>
+                <input matInput placeholder="Ex: SP" [(ngModel)]="usuario.estado" name="estado" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-25">
+                <mat-label>Município</mat-label>
+                <input matInput placeholder="Ex: São Paulo" [(ngModel)]="usuario.municipio" name="municipio"
+                autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline" class="input-62 input-margin-right-1">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="Ex: teste@abc.com" [(ngModel)]="usuario.email" name="email"
+                autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-18 input-margin-right-1">
+                <mat-label>Telefone</mat-label>
+                <input matInput placeholder="Ex: 11 01234-1234" [(ngModel)]="usuario.telefone" name="telefone"
+                autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-18">
+                <mat-label>Telefone Secundário(Opcional)</mat-label>
+                <input matInput placeholder="Ex: 11 01234-1234" [(ngModel)]="usuario.telefone_secundario"
+                autocomplete="off" name="telefone_secundario">
+            </mat-form-field>
+        </div>
+    </form>
+    <div class="formButtons">
+        <button mat-raised-button class="form-button"
+            (click)="cancel()">
+            VOLTAR
+        </button>
+        <button mat-raised-button color="warn" class="delete-button" title="Em desenvolvimento"
+        (click)="openModal('delete')">
+            EXCLUIR CONTA
+        </button>
+        <button mat-raised-button class="form-button azul-claro azul-escuro"
+            (click)="updateUser()" title="Concluir alteração">
+            CONCLUIR
+        </button>
+    </div>
+</mat-card>

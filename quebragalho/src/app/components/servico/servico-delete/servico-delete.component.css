@@ -1,0 +1,19 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin: 20px 15px 0px 0px;
+}
+
+.formButtons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 140px;
+}
+
+.udeleteServico {
+    background-color: rgb(252, 252, 252);
+    height: 550px;
+}

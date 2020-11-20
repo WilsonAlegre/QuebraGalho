@@ -1,0 +1,12 @@
+.sobre-style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(252, 252, 252);
+    height: 100%;
+    justify-content: center;
+}
+
+.sobreTamanho {
+    width: 1000px;
+}

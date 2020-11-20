@@ -1,0 +1,53 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav cinza-claro mat-elevation-z20" mode="side" opened fixedInViewport="true">
+        <mat-nav-list class="nav-list">
+            <div mat-list-item>
+                <a routerLink="usuarios/update/1">
+                    <img src="./assets/user.png" width="100px">
+                </a>
+            </div>
+            <div mat-list-item class="cinza-escuro user-margin-top">
+                <a class="user-options" routerLink="usuarios/update/1">
+                    <span class="light-font">Minha conta</span><i class="material-icons user-settings">settings</i>
+                </a>
+            </div>
+            <div mat-list-item class="sair-margin-top">
+                <a>
+                    <span class="cinza-escuro light-font">SAIR</span>
+                </a>
+            </div>
+            <div mat-list-item class="nav-buttons-margin">
+                <button mat-raised-button class="azul-claro azul-escuro nav-button"
+                    routerLink="/">
+                    <i class="material-icons margin-right-10">home</i><b>PÁGINA INICIAL</b>
+                </button>
+            </div>
+            <div mat-list-item class="nav-buttons-margin">
+                <button mat-raised-button class="azul-claro azul-escuro nav-button"
+                    routerLink="/servicos">
+                    <i class="material-icons margin-right-10">list</i><b>MEUS SERVIÇOS</b>
+                </button>
+            </div>
+            <div mat-list-item class="nav-buttons-margin">
+                <button mat-raised-button class="azul-claro azul-escuro nav-button"
+                    routerLink="servicos/adicionar">
+                    <i class="material-icons margin-right-10">add</i><b>NOVO SERVIÇO</b>
+                </button>
+            </div>
+            <div mat-list-item class="help-margin">
+                <app-modal-ajuda></app-modal-ajuda>
+            </div>
+            <div mat-list-item class="logo-margin">
+                <a routerLink="sobre">
+                    <img src="./assets/QG Escuro.png" width="90px">
+                </a>
+            </div>
+            <div mat-list-item>
+                <a routerLink="sobre">
+                    <span class="azul-escuro contrast">SOBRE</span>
+                </a>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+</mat-sidenav-container>
+

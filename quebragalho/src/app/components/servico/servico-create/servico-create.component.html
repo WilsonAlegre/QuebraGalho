@@ -1,0 +1,41 @@
+<mat-card class="createServico">
+    <div class="title-form">
+        <mat-card-title>NOVO SERVIÇO</mat-card-title>
+    </div>
+    <form>
+        <div class="form-rows">
+            <mat-form-field appearance="outline" class="categoria">
+                <mat-label>Categoria</mat-label>
+                <input matInput placeholder="Ex: Entrega" [(ngModel)]="servico.categoria" name="categoria" 
+                    autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="titulo">
+                <mat-label>Título</mat-label>
+                <input matInput placeholder="Ex: Entrega para cidade X" [(ngModel)]="servico.titulo" name="titulo"
+                autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="valor">
+                <mat-label>Valor</mat-label>
+                <input matInput placeholder="Ex: R$ 25,00" 
+                    currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+                    [(ngModel)]="servico.valor" name="valor" autocomplete="off">
+            </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput placeholder="Ex: Entregar a caixa no endereço..." class="descricao"
+                [(ngModel)]="servico.descricao" name="descricao" autocomplete="off" rows="11"></textarea>
+        </mat-form-field>
+    </form>
+    <div class="formButtons">
+        <button mat-raised-button class="form-button"
+            (click)="cancel()">
+            VOLTAR
+        </button>
+        <button mat-raised-button class="form-button azul-claro azul-escuro"
+            (click)="createServico()">
+            CONCLUIR
+        </button>
+    </div>
+</mat-card>
+

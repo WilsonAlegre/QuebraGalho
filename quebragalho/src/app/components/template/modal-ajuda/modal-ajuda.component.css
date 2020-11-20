@@ -1,0 +1,18 @@
+.email {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.OkButton {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    height: 35px;
+    border-color: transparent;
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+}

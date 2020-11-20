@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-image: url('./assets/Background.png');
+}
+
+.azul-claro {
+    background-color: rgb(34, 222, 204);
+}
+
+.azul-escuro {
+    color: rgb(0, 16, 77)!important;
+}
+
+.cinza-claro {
+    background-color: rgb(234, 234, 234)!important;
+}
+
+.cinza-escuro {
+    color: rgb(151, 151, 151);
+}
+
+.body-view {
+    width: 82%;
+    margin-left: 250px;
+    margin-top: 20px;
+    height: 600px;
+}
+
+.nav-button {
+    font-size: 0.8rem;
+    width: 180px;
+    border-radius: 25px !important;
+}
+
+.title-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.form-button {
+    width: 120px;
+    border-radius: 25px !important;
+}
+
+.green-snackbar {
+    background-color: rgb(99, 223, 136);
+}
+
+.red-snackbar {
+    background-color: rgb(220, 50, 50);
+    color: white;
+}
+
+.light-font {
+    font-weight: 500;
+}
+
+.contrast {
+    font-weight: 590;
+}
+
+.margin-right-10 {
+    margin-right: 10px;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-left-10 {
+    margin-left: 10px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.background-red {
+    background-color: rgb(220, 50, 50);
+}
+
+.color-white {
+    color: white;
+}

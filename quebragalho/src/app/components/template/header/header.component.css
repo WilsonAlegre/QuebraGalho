@@ -1,0 +1,9 @@
+.header {
+    justify-content: center;
+    background-color: rgb(64, 64, 64);
+    color: white;
+    height: 6%;
+    width: 40%;
+    border-radius: 0 0 15px 15px;
+    margin-left: 37%;
+}

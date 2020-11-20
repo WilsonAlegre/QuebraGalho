@@ -1,0 +1,34 @@
+<mat-card class="createServico">
+    <div class="title-form">
+        <mat-card-title>DESEJA REALMENTE EXCLUIR ESTE SERVIÇO?</mat-card-title>
+    </div>
+    <form>
+        <mat-form-field appearance="outline">
+            <mat-label>Categoria</mat-label>
+            <input matInput placeholder="Categoria" [value]="servico.categoria" name="categoria" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Título</mat-label>
+            <input matInput placeholder="Título" [value]="servico.titulo" name="titulo" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Valor</mat-label>
+            <input matInput placeholder="Valor" [value]="servico.valor" name="valor" disabled>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Descrição</mat-label>
+            <input matInput placeholder="Descrição" [value]="servico.descricao" name="descricao" disabled>
+        </mat-form-field>
+    </form>
+    <div class="formButtons">
+        <button mat-raised-button class="form-button"
+            (click)="cancel()">
+            NÃO
+        </button>
+        <button mat-raised-button class="form-button background-red color-white"
+            (click)="deleteServico()">
+            SIM
+        </button>
+    </div>
+</mat-card>
+

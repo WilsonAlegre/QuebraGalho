@@ -1,0 +1,30 @@
+<h2 mat-dialog-title><b>Nova senha</b></h2>
+<form>
+    <mat-form-field appearance="outline" class="input-100">
+        <mat-label>Senha atual</mat-label>
+        <input type="password" matInput placeholder="Ex: Abc#123" [(ngModel)]="senha_atual" 
+        autocomplete="off" name="senha_atual">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="input-100">
+        <mat-label>Nova senha</mat-label>
+        <input type="password" matInput placeholder="Ex: Abc#123" [(ngModel)]="nova_senha" 
+        autocomplete="off" name="nova_senha">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="input-100">
+        <mat-label>Confirme a nova senha</mat-label>
+        <input type="password" matInput placeholder="Ex: Abc#123" [(ngModel)]="senha_confirmacao" 
+        autocomplete="off" name="senha_confirmacao">
+    </mat-form-field>
+</form>
+<div class="modal-update-keypass-buttons">
+    <button mat-raised-button class="form-button mat-elevation-z4 modal-button-cancelar" 
+        (click)="closeModal()">
+        <b>CANCELAR</b>
+    </button>
+    <button mat-raised-button class="form-button mat-elevation-z4 modal-button-confirmar azul-claro azul-escuro" 
+        (click)="updateKeypass()" [disabled]="senhasNaoConferem()"
+        [title]="senhaAtualInvalida() ? 'A senha atual está incorreta' : senhasNaoConferem() ? 
+            'As senhas não conferem' : 'Concluir alteração de senha'">
+        <b>CONFIRMAR</b>
+    </button>
+</div>

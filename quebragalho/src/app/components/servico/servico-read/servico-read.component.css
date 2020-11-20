@@ -1,0 +1,25 @@
+.table-borders {
+    border-radius: 8px;
+    overflow:hidden !important;
+}
+
+table {
+  width: 100%;
+}
+
+.edit {
+    margin-right: 10px;
+}
+
+.edit > i {
+    color: rgb(100, 100, 100);
+}
+
+.delete > i{
+    color: rgb(220, 70, 70);
+}
+
+.actions-column {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,12 @@
+<h1 mat-dialog-title><b>ATENÇÃO</b></h1>
+<div mat-dialog-content>Tem certeza que deseja excluir está conta?</div>
+<div class="modal-buttons">
+    <button mat-raised-button class="form-button mat-elevation-z4 modal-button" 
+        (click)="closeModal()">
+        <b>NÃO</b>
+    </button>
+    <button mat-raised-button class="form-button mat-elevation-z4 modal-button-sim" 
+        (click)="deleteUser()">
+        <b>SIM</b>
+    </button>
+</div>

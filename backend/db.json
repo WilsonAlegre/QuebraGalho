@@ -1,0 +1,64 @@
+{
+  "usuarios": [
+    {
+      "usuario": "wilson",
+      "senha": "123",
+      "nome": "Wilson Alegre Neto",
+      "cpf": "123.123.123-50",
+      "cep": "12.123-123",
+      "logradouro": "Rua",
+      "numero": "41",
+      "complemento": "Casa",
+      "bairro": "Jd. Teste",
+      "estado": "Teste",
+      "municipio": "Teste",
+      "email": "wilson@wilson.com",
+      "telefone": "12345-1234",
+      "telefone_secundario": "",
+      "id": 1,
+      "name": "2080Ti"
+    }
+  ],
+  "servicos": [
+    {
+      "id": 1,
+      "categoria": "Entrega",
+      "titulo": "Entrega de alimentos",
+      "valor": 50,
+      "situacao": "Aberto",
+      "descricao": "Descrição do serviço"
+    },
+    {
+      "categoria": "Diversos",
+      "titulo": "Novo",
+      "valor": "10.20",
+      "situacao": "Aberto",
+      "descricao": "Teste",
+      "id": 3
+    },
+    {
+      "categoria": "Aula Teste",
+      "titulo": "Aula teste",
+      "valor": 99999999999.99,
+      "situacao": "Aberto",
+      "descricao": "Teste",
+      "id": 5
+    },
+    {
+      "categoria": "Snack",
+      "titulo": "Bar",
+      "valor": "1",
+      "situacao": "Aberto",
+      "descricao": "Oi",
+      "id": 6
+    },
+    {
+      "categoria": "White",
+      "titulo": "Branco",
+      "valor": "1",
+      "situacao": "Aberto",
+      "descricao": "Teste",
+      "id": 7
+    }
+  ]
+}

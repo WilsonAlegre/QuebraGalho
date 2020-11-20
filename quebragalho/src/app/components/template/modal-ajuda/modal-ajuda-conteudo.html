@@ -1,0 +1,16 @@
+<h1 mat-dialog-title><b>AJUDA</b></h1>
+<div mat-dialog-content>Está com dúvidas, sugestões, críticas ou elogios? Envie um e-mail para: </div>
+<div class="margin-top-10">
+<mat-form-field class="email" appearance="fill">
+    <input type="text" matInput value="quebragalho@gmail.com.br">
+    <mat-icon matSuffix class="material-icons cursor-pointer margin-left-10" 
+        (click)="emailCopiado()" title="Copiar e-mail"
+        [cdkCopyToClipboard]="copiarEmail">content_copy</mat-icon>
+</mat-form-field>
+</div>
+<div class="OkButton">
+    <button mat-raised-button class="form-button azul-claro azul-escuro mat-elevation-z4" (click)="closeModal()">
+        <b>OK</b>
+    </button>
+</div>
+

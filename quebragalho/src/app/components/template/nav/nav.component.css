@@ -1,0 +1,40 @@
+.container {
+    margin-left: 1%;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+}
+
+.user-options {
+    display: flex;
+    align-items: center;
+}
+
+.user-settings {
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.user-margin-top {
+    margin-top: 10px;
+}
+
+.sair-margin-top {
+    margin-top: 8px;
+}
+
+.nav-buttons-margin {
+    margin-top: 20px;
+}
+
+.help-margin {
+    margin-top: 50px;
+}
+
+.logo-margin {
+    margin-top: 190px;
+}
