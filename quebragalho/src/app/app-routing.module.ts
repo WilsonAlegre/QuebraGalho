@@ -26,11 +26,11 @@ const routes: Routes = [
     component: ServicoCreateComponent
   },
   {
-    path: "servicos/update/:id",
+    path: "servicos/update/:_id",
     component: ServicoUpdateComponent
   },
   {
-    path: "servicos/delete/:id",
+    path: "servicos/delete/:_id",
     component: ServicoDeleteComponent
   },
   {
@@ -38,7 +38,7 @@ const routes: Routes = [
     component: UsuarioCreateComponent
   },
   {
-    path: "usuarios/update/:id",
+    path: "usuarios/update",
     component: UsuarioUpdateComponent
   },
   {

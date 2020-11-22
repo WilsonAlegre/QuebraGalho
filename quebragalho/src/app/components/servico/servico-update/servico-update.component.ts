@@ -23,8 +23,8 @@ export class ServicoUpdateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = +this.activeRoute.snapshot.paramMap.get('id');
-    this.servicoService.getById(id).subscribe(servico => {
+    const _id = this.activeRoute.snapshot.paramMap.get('_id');
+    this.servicoService.getById(_id).subscribe(servico => {
       this.servico = servico;
     })
   }

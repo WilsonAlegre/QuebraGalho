@@ -5,12 +5,13 @@ import { MatSnackBar } from '@angular/material/snack-bar'
 import { EMPTY, Observable } from 'rxjs';
 import { Servico } from './servico.model';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ServicoService {
 
-  baseUrl = "http://localhost:3001/servicos";
+  baseUrl = "http://localhost:4200/api/servicos";
 
   constructor(
     private snackBar: MatSnackBar,
@@ -29,7 +30,6 @@ export class ServicoService {
   
   create(servico: Servico): Observable<Servico> {
     return this.http.post<Servico>(this.baseUrl, servico).pipe(
-      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
@@ -37,31 +37,27 @@ export class ServicoService {
   
   getAll(): Observable<Servico[]> {
     return this.http.get<Servico[]>(this.baseUrl).pipe(
-      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  getById(id: number): Observable<Servico> {
-    const url = `${this.baseUrl}/${id}`;
+  getById(_id: string): Observable<Servico> {
+    const url = `${this.baseUrl}/${_id}`;
     return this.http.get<Servico>(url).pipe(
-      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
   
   update(servico: Servico): Observable<Servico> {
-    const url = `${this.baseUrl}/${servico.id}`;
+    const url = `${this.baseUrl}/${servico._id}`;
     return this.http.put<Servico>(url, servico).pipe(
-      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  delete(id: number): Observable<Servico> {
-    const url = `${this.baseUrl}/${id}`;
+  delete(_id: string): Observable<Servico> {
+    const url = `${this.baseUrl}/${_id}`;
     return this.http.delete<Servico>(url).pipe(
-      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }

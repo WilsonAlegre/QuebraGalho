@@ -10,7 +10,7 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class UsuarioService {
 
-  baseUrl = "http://localhost:3001/usuarios";
+  baseUrl = "http://localhost:4200/api/usuarios";
 
   constructor(
     private snackBar: MatSnackBar,
@@ -28,39 +28,34 @@ export class UsuarioService {
 
   create(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(this.baseUrl, usuario).pipe(
-      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  getById(id: number): Observable<Usuario> {
-    const url = `${this.baseUrl}/${id}`;
+  getById(_id: string): Observable<Usuario> {
+    const url = `${this.baseUrl}/${_id}`;
     return this.http.get<Usuario>(url).pipe(
-      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
   updateUser(usuario: Usuario): Observable<Usuario> {
-    const url = `${this.baseUrl}/${usuario.id}`;
+    const url = `${this.baseUrl}/${usuario._id}`;
     return this.http.put<Usuario>(url, usuario).pipe(
-      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  updateKeypass(id: number, senha: Object): Observable<Usuario> {
-    const url = `${this.baseUrl}/${id}`;
+  updateKeypass(_id: string, senha: Object): Observable<Usuario> {
+    const url = `${this.baseUrl}/${_id}`;
     return this.http.patch<Usuario>(url, senha).pipe(
-      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
 
-  deleteUser(id: number): Observable<Usuario> {
-    const url = `${this.baseUrl}/${id}`;
+  deleteUser(_id: string): Observable<Usuario> {
+    const url = `${this.baseUrl}/${_id}`;
     return this.http.delete<Usuario>(url).pipe(
-      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }

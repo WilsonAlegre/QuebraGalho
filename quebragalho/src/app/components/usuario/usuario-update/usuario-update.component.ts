@@ -42,8 +42,8 @@ export class UsuarioUpdateComponent implements OnInit {
   ) { headerService.headerData.title = 'MINHA CONTA' }
 
   ngOnInit(): void {
-    const id = +this.activeRoute.snapshot.paramMap.get('id');
-    this.usuarioService.getById(id).subscribe(usuario => {
+    const _id = '5fbac34c9e43d01e5c97a962';
+    this.usuarioService.getById(_id).subscribe(usuario => {
       this.usuario = usuario;
     });
   }
@@ -64,13 +64,13 @@ export class UsuarioUpdateComponent implements OnInit {
       this.dialog.open(ModalExcluirUsuario, {
         height: '250px',
         width: '500px',
-        data: { id: this.usuario.id}
+        data: { _id: this.usuario._id}
       });
     } else if (modalName === 'updateKeypass'){
       this.dialog.open(ModalAtualizarSenha, {
         height: '390px',
         width: '500px',
-        data: { id: this.usuario.id,
+        data: { _id: this.usuario._id,
           senha_atual: this.usuario.senha
         }
       });
@@ -90,7 +90,7 @@ export class ModalExcluirUsuario {
     public dialog: MatDialog,
     private usuarioService: UsuarioService,
     private router: Router,
-    @Inject(MAT_DIALOG_DATA) public data: {id: number}
+    @Inject(MAT_DIALOG_DATA) public data: {_id: string}
   ) { }
 
   closeModal() {
@@ -98,7 +98,7 @@ export class ModalExcluirUsuario {
   }
 
   deleteUser(): void {
-    this.usuarioService.deleteUser(this.data.id).subscribe(() => {
+    this.usuarioService.deleteUser(this.data._id).subscribe(() => {
       this.usuarioService.showMessage('Conta excluída com sucesso!');
       this.closeModal();
       this.router.navigate([""]); // Redirecionar para o login quando estiver pronto
@@ -116,7 +116,7 @@ export class ModalAtualizarSenha {
   constructor(
     public dialog: MatDialog,
     private usuarioService: UsuarioService,
-    @Inject(MAT_DIALOG_DATA) public data: {id: number, senha_atual: string}
+    @Inject(MAT_DIALOG_DATA) public data: {_id: string, senha_atual: string}
   ) { }
   
   senha_atual = '';
@@ -143,7 +143,7 @@ export class ModalAtualizarSenha {
 
   updateKeypass(): void {
     this.novaSenhaObj = { senha : this.nova_senha}
-    this.usuarioService.updateKeypass(this.data.id, this.novaSenhaObj).subscribe(() => {
+    this.usuarioService.updateKeypass(this.data._id, this.novaSenhaObj).subscribe(() => {
       this.usuarioService.showMessage('Senha alterada com sucesso!');
       this.closeModal();
     })

@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "usuario": "wilson",
-      "senha": "123",
+      "senha": "abc",
       "nome": "Wilson Alegre Neto",
       "cpf": "123.123.123-50",
       "cep": "12.123-123",
@@ -21,14 +21,6 @@
   ],
   "servicos": [
     {
-      "id": 1,
-      "categoria": "Entrega",
-      "titulo": "Entrega de alimentos",
-      "valor": 50,
-      "situacao": "Aberto",
-      "descricao": "Descrição do serviço"
-    },
-    {
       "categoria": "Diversos",
       "titulo": "Novo",
       "valor": "10.20",
@@ -37,11 +29,11 @@
       "id": 3
     },
     {
-      "categoria": "Aula Teste",
-      "titulo": "Aula teste",
-      "valor": 99999999999.99,
+      "categoria": "Teste",
+      "titulo": "ABC",
+      "valor": 1.23,
       "situacao": "Aberto",
-      "descricao": "Teste",
+      "descricao": "asldkjasldkjalskdkjlasd",
       "id": 5
     },
     {
@@ -53,11 +45,11 @@
       "id": 6
     },
     {
-      "categoria": "White",
-      "titulo": "Branco",
-      "valor": "1",
+      "categoria": "No MAP",
+      "titulo": "Without Map Here",
+      "valor": 1.99,
+      "descricao": "Teste Sem MAP",
       "situacao": "Aberto",
-      "descricao": "Teste",
       "id": 7
     }
   ]

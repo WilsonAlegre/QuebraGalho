@@ -1,5 +1,5 @@
 export interface Servico {
-    id?: number,
+    _id?: string,
     categoria: string,
     titulo: string,
     valor: number,
