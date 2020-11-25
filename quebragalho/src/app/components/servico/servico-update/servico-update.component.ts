@@ -4,6 +4,10 @@ import { ServicoService } from './../servico.service';
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from '../../template/header/header.service';
 
+interface Categoria {
+  nome: string;
+}
+
 @Component({
   selector: 'app-servico-update',
   templateUrl: './servico-update.component.html',
@@ -21,6 +25,23 @@ export class ServicoUpdateComponent implements OnInit {
   ) { 
     headerService.headerData.title = 'ATUALIZAÇÃO DE SERVIÇO'
   }
+
+  //Categorias
+  categorias: Categoria[] = [
+    {nome: 'Compras'},
+    {nome: 'Comunicação'},
+    {nome: 'Construção'},
+    {nome: 'Educacional'},
+    {nome: 'Elétrica'},
+    {nome: 'Entregas'},
+    {nome: 'Financeiro'},
+    {nome: 'Hidráulica'},
+    {nome: 'Marcenaria'},
+    {nome: 'Pintura'},
+    {nome: 'Saúde'},
+    {nome: 'Serviços domésticos em geral'},
+    {nome: 'Turismo'}
+  ]
 
   ngOnInit(): void {
     const _id = this.activeRoute.snapshot.paramMap.get('_id');

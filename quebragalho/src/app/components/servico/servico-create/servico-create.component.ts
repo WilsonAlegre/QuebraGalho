@@ -4,6 +4,10 @@ import { Router } from '@angular/router'
 import { Servico } from '../servico.model';
 import { HeaderService } from '../../template/header/header.service';
 
+interface Categoria {
+  nome: string;
+}
+
 @Component({
   selector: 'app-servico-create',
   templateUrl: './servico-create.component.html',
@@ -18,6 +22,23 @@ export class ServicoCreateComponent implements OnInit {
     situacao: 'Aberto',
     descricao: ''
   }
+
+  //Categorias
+  categorias: Categoria[] = [
+    {nome: 'Compras'},
+    {nome: 'Comunicação'},
+    {nome: 'Construção'},
+    {nome: 'Educacional'},
+    {nome: 'Elétrica'},
+    {nome: 'Entregas'},
+    {nome: 'Financeiro'},
+    {nome: 'Hidráulica'},
+    {nome: 'Marcenaria'},
+    {nome: 'Pintura'},
+    {nome: 'Saúde'},
+    {nome: 'Serviços domésticos em geral'},
+    {nome: 'Turismo'}
+  ]
 
   constructor(
     private servicoService: ServicoService,

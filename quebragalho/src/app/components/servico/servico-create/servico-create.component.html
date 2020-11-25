@@ -5,9 +5,17 @@
     <form>
         <div class="form-rows">
             <mat-form-field appearance="outline" class="categoria">
+                <!--
                 <mat-label>Categoria</mat-label>
                 <input matInput placeholder="Ex: Entrega" [(ngModel)]="servico.categoria" name="categoria" 
                     autocomplete="off">
+                -->
+                <mat-label>Categoria</mat-label>
+                <mat-select [(ngModel)]="servico.categoria" name="categoria">
+                    <mat-option *ngFor="let categoria of categorias" [value]="categoria.nome">
+                     {{categoria.nome}}
+                    </mat-option>
+                </mat-select>
             </mat-form-field>
             <mat-form-field appearance="outline" class="titulo">
                 <mat-label>Título</mat-label>
