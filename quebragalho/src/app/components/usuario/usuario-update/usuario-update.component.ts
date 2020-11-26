@@ -1,35 +1,34 @@
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { HeaderService } from './../../template/header/header.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { UsuarioService } from './../usuario.service';
-import { Component, EventEmitter, Inject, OnInit } from '@angular/core';
-import { Usuario } from '../usuario.model';
+import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { HeaderService } from "./../../template/header/header.service";
+import { Router, ActivatedRoute } from "@angular/router";
+import { UsuarioService } from "./../usuario.service";
+import { Component, EventEmitter, Inject, OnInit } from "@angular/core";
+import { Usuario } from "../usuario.model";
 
 @Component({
-  selector: 'app-usuario-update',
-  templateUrl: './usuario-update.component.html',
-  styleUrls: ['./usuario-update.component.css']
+  selector: "app-usuario-update",
+  templateUrl: "./usuario-update.component.html",
+  styleUrls: ["./usuario-update.component.css"],
 })
 export class UsuarioUpdateComponent implements OnInit {
-
   usuario: Usuario = {
-    usuario: '',
-    senha: '',
-    nome: '',
-    cpf: '',
-    cep: '',
-    logradouro: '',
-    numero: '',
-    complemento: '',
-    bairro: '',
-    estado: '',
-    municipio: '',
-    email: '',
-    telefone: '',
-    telefone_secundario: ''
-  }
+    usuario: "",
+    senha: "",
+    nome: "",
+    cpf: "",
+    cep: "",
+    logradouro: "",
+    numero: "",
+    complemento: "",
+    bairro: "",
+    estado: "",
+    municipio: "",
+    email: "",
+    telefone: "",
+    telefone_secundario: "",
+  };
 
-  senha_confirmacao = '';
+  senha_confirmacao = "";
 
   emitirChamadaModalExclusao = new EventEmitter<string>();
 
@@ -39,11 +38,13 @@ export class UsuarioUpdateComponent implements OnInit {
     private headerService: HeaderService,
     private activeRoute: ActivatedRoute,
     public dialog: MatDialog
-  ) { headerService.headerData.title = 'MINHA CONTA' }
+  ) {
+    headerService.headerData.title = "MINHA CONTA";
+  }
 
   ngOnInit(): void {
-    const _id = '5fbac34c9e43d01e5c97a962';
-    this.usuarioService.getById(_id).subscribe(usuario => {
+    const _id = "1";
+    this.usuarioService.getById(_id).subscribe((usuario) => {
       this.usuario = usuario;
     });
   }
@@ -54,44 +55,43 @@ export class UsuarioUpdateComponent implements OnInit {
 
   updateUser(): void {
     this.usuarioService.updateUser(this.usuario).subscribe(() => {
-      this.usuarioService.showMessage('Conta alterada com sucesso!');
-      this.router.navigate(['']);
-    })
+      this.usuarioService.showMessage("Conta alterada com sucesso!");
+      this.router.navigate([""]);
+    });
   }
 
   openModal(modalName: string) {
-    if (modalName === 'delete') {
+    if (modalName === "delete") {
       this.dialog.open(ModalExcluirUsuario, {
-        height: '250px',
-        width: '500px',
-        data: { _id: this.usuario._id}
+        height: "250px",
+        width: "500px",
+        data: { _id: this.usuario._id },
       });
-    } else if (modalName === 'updateKeypass'){
+    } else if (modalName === "updateKeypass") {
       this.dialog.open(ModalAtualizarSenha, {
-        height: '390px',
-        width: '500px',
-        data: { _id: this.usuario._id,
-          senha_atual: this.usuario.senha
-        }
+        height: "390px",
+        width: "500px",
+        data: {
+          _id: this.usuario._id,
+          senha_atual: this.usuario.senha,
+        },
       });
     }
   }
-
 }
 
 @Component({
-  selector: 'modal-excluir-usuario-conteudo',
-  templateUrl: './modal-excluir-usuario-conteudo.html',
-  styleUrls: ['./usuario-update.component.css']
+  selector: "modal-excluir-usuario-conteudo",
+  templateUrl: "./modal-excluir-usuario-conteudo.html",
+  styleUrls: ["./usuario-update.component.css"],
 })
 export class ModalExcluirUsuario {
-
   constructor(
     public dialog: MatDialog,
     private usuarioService: UsuarioService,
     private router: Router,
-    @Inject(MAT_DIALOG_DATA) public data: {_id: string}
-  ) { }
+    @Inject(MAT_DIALOG_DATA) public data: { _id: string }
+  ) {}
 
   closeModal() {
     this.dialog.closeAll();
@@ -99,7 +99,7 @@ export class ModalExcluirUsuario {
 
   deleteUser(): void {
     this.usuarioService.deleteUser(this.data._id).subscribe(() => {
-      this.usuarioService.showMessage('Conta excluída com sucesso!');
+      this.usuarioService.showMessage("Conta excluída com sucesso!");
       this.closeModal();
       this.router.navigate([""]); // Redirecionar para o login quando estiver pronto
     });
@@ -107,21 +107,21 @@ export class ModalExcluirUsuario {
 }
 
 @Component({
-  selector: 'modal-atualizar-senha-conteudo',
-  templateUrl: './modal-atualizar-senha-conteudo.html',
-  styleUrls: ['./usuario-update.component.css']
+  selector: "modal-atualizar-senha-conteudo",
+  templateUrl: "./modal-atualizar-senha-conteudo.html",
+  styleUrls: ["./usuario-update.component.css"],
 })
 export class ModalAtualizarSenha {
-
   constructor(
     public dialog: MatDialog,
     private usuarioService: UsuarioService,
-    @Inject(MAT_DIALOG_DATA) public data: {_id: string, senha_atual: string}
-  ) { }
-  
-  senha_atual = '';
-  nova_senha = '';
-  senha_confirmacao = '';
+    @Inject(MAT_DIALOG_DATA)
+    public data: { _id: string; senha_atual: string }
+  ) {}
+
+  senha_atual = "";
+  nova_senha = "";
+  senha_confirmacao = "";
   novaSenhaObj = {};
 
   closeModal() {
@@ -133,20 +133,25 @@ export class ModalAtualizarSenha {
   }
 
   senhasNaoConferem(): boolean {
-    return this.isNullOrEmpty(this.nova_senha) || this.isNullOrEmpty(this.senha_confirmacao) ||
-      (this.senha_confirmacao != this.nova_senha) || this.senhaAtualInvalida();
+    return (
+      this.isNullOrEmpty(this.nova_senha) ||
+      this.isNullOrEmpty(this.senha_confirmacao) ||
+      this.senha_confirmacao != this.nova_senha ||
+      this.senhaAtualInvalida()
+    );
   }
 
   isNullOrEmpty(str: String): boolean {
-   return !((str != undefined || str != null) && ((str.trim()).length > 0));
+    return !((str != undefined || str != null) && str.trim().length > 0);
   }
 
   updateKeypass(): void {
-    this.novaSenhaObj = { senha : this.nova_senha}
-    this.usuarioService.updateKeypass(this.data._id, this.novaSenhaObj).subscribe(() => {
-      this.usuarioService.showMessage('Senha alterada com sucesso!');
-      this.closeModal();
-    })
+    this.novaSenhaObj = { senha: this.nova_senha };
+    this.usuarioService
+      .updateKeypass(this.data._id, this.novaSenhaObj)
+      .subscribe(() => {
+        this.usuarioService.showMessage("Senha alterada com sucesso!");
+        this.closeModal();
+      });
   }
-
 }

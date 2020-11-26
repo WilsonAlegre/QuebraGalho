@@ -1,15 +1,7 @@
 <mat-card class="createServico">
-    <div class="title-form">
-        <mat-card-title>NOVO SERVIÇO</mat-card-title>
-    </div>
     <form>
         <div class="form-rows">
             <mat-form-field appearance="outline" class="categoria">
-                <!--
-                <mat-label>Categoria</mat-label>
-                <input matInput placeholder="Ex: Entrega" [(ngModel)]="servico.categoria" name="categoria" 
-                    autocomplete="off">
-                -->
                 <mat-label>Categoria</mat-label>
                 <mat-select [(ngModel)]="servico.categoria" name="categoria">
                     <mat-option *ngFor="let categoria of categorias" [value]="categoria.nome">

@@ -14,6 +14,7 @@ router.post('/', (req, res) => {
     let usuario = new Usuario();
     
     // Setters
+    usuario._id = req.body._id;
     usuario.usuario = req.body.usuario;
     usuario.senha = req.body.senha;
     usuario.nome = req.body.nome;

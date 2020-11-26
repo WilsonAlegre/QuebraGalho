@@ -10,6 +10,7 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let UsuarioSchema = new Schema({
+    _id: String,
     usuario: String,
     senha: String,
     nome: String,
