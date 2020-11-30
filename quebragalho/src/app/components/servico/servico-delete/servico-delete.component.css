@@ -10,10 +10,32 @@ button {
 .formButtons {
     display: flex;
     justify-content: flex-end;
-    margin-top: 140px;
+    margin-top: 115px;
 }
 
-.udeleteServico {
+.deleteServico {
     background-color: rgb(252, 252, 252);
-    height: 550px;
+    height: 100%;
+}
+
+.situacao {
+    width: 32%;
+    margin-right: 1%;
+}
+
+.categoria {
+    width: 32%;
+    margin-right: 1%;
+}
+
+.titulo {
+    width: 100%;
+}
+
+.valor {
+    width: 34%;
+}
+
+.descricao {
+    resize: none;
 }

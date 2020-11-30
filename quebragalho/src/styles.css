@@ -70,6 +70,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
     margin-top: 10px;
 }
 
+.margin-left-5 {
+    margin-left: 5px;
+}
+
 .margin-left-10 {
     margin-left: 10px;
 }
@@ -84,4 +88,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 
 .color-white {
     color: white;
+}
+
+.padding-10 {
+    padding: 10px;
 }

@@ -8,13 +8,16 @@ interface Categoria {
   nome: string;
 }
 
+interface Situacao {
+  nome: string;
+}
+
 @Component({
   selector: "app-servico-update",
   templateUrl: "./servico-update.component.html",
   styleUrls: ["./servico-update.component.css"],
 })
 export class ServicoUpdateComponent implements OnInit {
-  
   servico: Servico;
 
   /*
@@ -53,13 +56,22 @@ export class ServicoUpdateComponent implements OnInit {
     { nome: "Turismo" },
   ];
 
+  // Situações
+  situacoes: Situacao[] = [
+    { nome: "Aberto" },
+    { nome: "Iniciado" },
+    { nome: "Fechado" },
+  ];
+
   ngOnInit(): void {
+    // SEM RESOLVER
     /*
     const _id = this.activeRoute.snapshot.paramMap.get('_id');
     this.servicoService.getById(_id).subscribe(servico => {
       this.servico = servico;
     })
     */
+   // COM RESOLVER
     this.activeRoute.data.subscribe((resolveReturn) => {
       this.servico = resolveReturn.servico;
     });

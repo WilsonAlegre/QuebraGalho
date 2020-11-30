@@ -1,6 +1,14 @@
 <mat-card class="updateServico">
     <form>
         <div class="form-rows">
+            <mat-form-field appearance="outline" class="situacao">
+                <mat-label>Situação</mat-label>
+                <mat-select [(ngModel)]="servico.situacao" name="situacao">
+                    <mat-option *ngFor="let situacao of situacoes" [value]="situacao.nome">
+                     {{situacao.nome}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
             <mat-form-field appearance="outline" class="categoria">
                 <mat-label>Categoria</mat-label>
                 <mat-select [(ngModel)]="servico.categoria" name="categoria">
@@ -9,11 +17,6 @@
                     </mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field appearance="outline" class="titulo">
-                <mat-label>Título</mat-label>
-                <input matInput placeholder="Ex: Entrega para cidade X" [(ngModel)]="servico.titulo" name="titulo"
-                autocomplete="off">
-            </mat-form-field>
             <mat-form-field appearance="outline" class="valor">
                 <mat-label>Valor</mat-label>
                 <input matInput placeholder="Ex: R$ 25,00" 
@@ -21,6 +24,11 @@
                     [(ngModel)]="servico.valor" name="valor" autocomplete="off">
             </mat-form-field>
         </div>
+        <mat-form-field appearance="outline" class="titulo">
+            <mat-label>Título</mat-label>
+            <input matInput placeholder="Ex: Entrega para cidade X" [(ngModel)]="servico.titulo" name="titulo"
+            autocomplete="off">
+        </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Descrição</mat-label>
             <textarea matInput placeholder="Ex: Entregar a caixa no endereço..."  class="descricao"

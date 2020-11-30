@@ -1,0 +1,62 @@
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+
+.align {
+    align-items: center;
+}
+
+.servico-bloco {
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    border-radius: 5px;
+}
+
+.contato-box {
+    font-size: 1.1rem;
+    display: flex;
+    height: 150px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.msg-interesse {
+    text-align: center;
+}
+
+.cabecalho-bloco {
+    background-color: white;
+    border-radius: 6px 6px 0px 0px;
+    display: flex;
+    height: 40px;
+}
+
+.corpo-bloco {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+}
+
+.categoria {
+    background-color: rgb(0, 16, 77)!important;
+    color: white;
+    border-radius: 4px 0px 0px 0px;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+}
+
+.titulo {
+    height: 100%;
+    width: 50%;
+}
+
+.valor {
+    height: 100%;
+    width: 30%;
+    color: darkgreen;
+    text-align: end;
+}

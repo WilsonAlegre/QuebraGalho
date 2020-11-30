@@ -10,7 +10,7 @@ button {
 .formButtons {
     display: flex;
     justify-content: flex-end;
-    margin-top: 230px;
+    margin-top: 155px;
 }
 
 .createServico {
@@ -18,18 +18,22 @@ button {
     height: 100%;
 }
 
+.situacao {
+    width: 32%;
+    margin-right: 1%;
+}
+
 .categoria {
-    width: 22%;
+    width: 32%;
     margin-right: 1%;
 }
 
 .titulo {
-    width: 59%;
-    margin-right: 1%;
+    width: 100%;
 }
 
 .valor {
-    width: 17%;
+    width: 34%;
 }
 
 .descricao {

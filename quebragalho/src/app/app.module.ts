@@ -15,7 +15,10 @@ import { NavComponent } from "./components/template/nav/nav.component";
 import { ServicoCreateComponent } from "./components/servico/servico-create/servico-create.component";
 import { ServicoReadComponent } from "./components/servico/servico-read/servico-read.component";
 import { ServicoRead2Component } from "./components/servico/servico-read2/servico-read2.component";
-import { ModalAjudaComponent, ModalAjudaConteudo } from "./components/template/modal-ajuda/modal-ajuda.component";
+import {
+  ModalAjudaComponent,
+  ModalAjudaConteudo,
+} from "./components/template/modal-ajuda/modal-ajuda.component";
 import { UsuarioCreateComponent } from "./components/usuario/usuario-create/usuario-create.component";
 
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -38,8 +41,12 @@ import localePt from "@angular/common/locales/pt";
 import { registerLocaleData } from "@angular/common";
 import { ServicoUpdateComponent } from "./components/servico/servico-update/servico-update.component";
 import { ServicoDeleteComponent } from "./components/servico/servico-delete/servico-delete.component";
-import { ModalAtualizarSenha, UsuarioUpdateComponent } from "./components/usuario/usuario-update/usuario-update.component";
+import {
+  ModalAtualizarSenha,
+  UsuarioUpdateComponent,
+} from "./components/usuario/usuario-update/usuario-update.component";
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatExpansionModule } from "@angular/material/expansion";
 
 registerLocaleData(localePt);
 
@@ -83,6 +90,7 @@ registerLocaleData(localePt);
     ClipboardModule,
     MatTooltipModule,
     MatSelectModule,
+    MatExpansionModule,
   ],
   providers: [
     {

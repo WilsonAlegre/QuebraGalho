@@ -35,6 +35,9 @@ const routes: Routes = [
   {
     path: "servicos/delete/:_id",
     component: ServicoDeleteComponent,
+    resolve: {
+      servico: ServicoDetalheResolver,
+    },
   },
   {
     path: "usuarios/adicionar",

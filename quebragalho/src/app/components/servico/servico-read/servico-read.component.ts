@@ -23,7 +23,6 @@ export class ServicoReadComponent implements OnInit {
   ngOnInit(): void {
     this.servicoService.getAll().subscribe(servicos => {
       this.servicos = servicos;
-      console.log(this.servicos)
     })
   }
 

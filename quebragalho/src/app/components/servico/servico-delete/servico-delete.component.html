@@ -1,23 +1,41 @@
-<mat-card class="createServico">
+<mat-card class="deleteServico">
     <div class="title-form">
         <mat-card-title>DESEJA REALMENTE EXCLUIR ESTE SERVIÇO?</mat-card-title>
     </div>
     <form>
-        <mat-form-field appearance="outline">
-            <mat-label>Categoria</mat-label>
-            <input matInput placeholder="Categoria" [value]="servico.categoria" name="categoria" disabled>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
+        <div class="form-rows">
+            <mat-form-field appearance="outline" class="situacao">
+                <mat-label>Situação</mat-label>
+                <mat-select [(ngModel)]="servico.situacao" name="situacao" disabled>
+                    <mat-option [value]="servico.situacao">
+                     {{servico.situacao}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="categoria">
+                <mat-label>Categoria</mat-label>
+                <mat-select [(ngModel)]="servico.categoria" name="categoria" disabled>
+                    <mat-option [value]="servico.categoria">
+                     {{servico.categoria}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="valor">
+                <mat-label>Valor</mat-label>
+                <input matInput placeholder="Ex: R$ 25,00" 
+                    currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+                    [(ngModel)]="servico.valor" name="valor" autocomplete="off" disabled>
+            </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline" class="titulo">
             <mat-label>Título</mat-label>
-            <input matInput placeholder="Título" [value]="servico.titulo" name="titulo" disabled>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Valor</mat-label>
-            <input matInput placeholder="Valor" [value]="servico.valor" name="valor" disabled>
+            <input matInput placeholder="Ex: Entrega para cidade X" [(ngModel)]="servico.titulo" name="titulo"
+            autocomplete="off" disabled>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Descrição</mat-label>
-            <input matInput placeholder="Descrição" [value]="servico.descricao" name="descricao" disabled>
+            <textarea matInput placeholder="Ex: Entregar a caixa no endereço..."  class="descricao"
+                [(ngModel)]="servico.descricao" name="descricao" autocomplete="off" rows="11" disabled></textarea>
         </mat-form-field>
     </form>
     <div class="formButtons">

@@ -1,3 +1,70 @@
-<mat-card>
-    <mat-card-title>Página inicial</mat-card-title>
-</mat-card>
+<div class="servico-bloco">
+  <div>
+    <div class="cabecalho-bloco">
+      <div class="categoria">
+        <p class="padding-10">Categoria</p>
+      </div>
+      <div class="titulo">
+        <p class="padding-10">Título do serviço</p>
+      </div>
+      <div class="valor">
+        <p class="padding-10"><b>R$ 9,99</b></p>
+      </div>
+    </div>
+    <div class="corpo-bloco">
+      <span class="padding-10">Descrição do serviço</span>
+    </div>
+  </div>
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title class="align">
+          <i class="material-icons">room</i> Jaboticabal - SP
+        </mat-panel-title>
+        <mat-panel-description class="align">
+          {{ panelOpenState ? "Fechar contato" : "Mostrar contato" }}
+          <i class="material-icons margin-left-5">{{
+            panelOpenState ? "close" : "person_search"
+          }}</i>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="contato-box">
+        <div class="msg-interesse">
+          <p><b>Se interessou?</b></p>
+          <p>Entre em contato comigo!</p>
+        </div>
+        <div>
+          <img src="./assets/user.png" width="100px" />
+        </div>
+        <div>
+          <p><b>Nome</b></p>
+          <p>
+            (16) 1234-56789
+            <mat-icon
+              matSuffix
+              class="material-icons cursor-pointer margin-left-10"
+              (click)="telefoneCopiado()"
+              title="Copiar telefone"
+              [cdkCopyToClipboard]="copiarTelefone"
+              >content_copy
+            </mat-icon>
+          </p>
+          <p>
+            nome@teste.com.br
+            <mat-icon
+              matSuffix
+              class="material-icons cursor-pointer margin-left-10"
+              (click)="emailCopiado()"
+              title="Copiar e-mail"
+              [cdkCopyToClipboard]="copiarEmail"
+              >content_copy
+            </mat-icon>
+          </p>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
