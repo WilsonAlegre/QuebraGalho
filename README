@@ -1,0 +1,14 @@
+#REQUISITOS
+MongoDB e NodeJS instalados
+
+#PASTAS
+API → API Rest em NodeJS e Express
+backend → Backend inicial em JSON Server para validar o Frontend
+quebragalho → Frontend do projeto em Angular
+
+#EXECUTANDO
+Abra três terminais.
+No primeiro, execute 'mongod' para iniciar o servidor do MongoDB
+No segundo, execute 'npm start' dentro da pasta 'API' para subir o backend e conectar com a base de dados
+No terceiro, execute 'npm start' dentro da pasta 'quebragalho' para iniciar o servidor do Angular
+Acesse a aplicação em: http://localhost:4200/
